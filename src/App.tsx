@@ -16,7 +16,7 @@ function App() {
     };
 
     const handleClick = (index: number) => {
-      if(squares[index] !== null) {
+      if(squares[index] !== null || winner !== null) {
         return;
       }
 
@@ -25,7 +25,7 @@ function App() {
       setSquares(newSquares);
       setXisNext(!xIsNext);
 
-      if(checkWin(currentClass)) {
+      if(checkWin(newSquares, currentClass())) {
         setWinner(currentClass);
       }
     };
@@ -41,15 +41,14 @@ function App() {
       [2, 4, 6]
     ];
 
-    const checkWin = (currentClass: () => string) => {      
+    const checkWin = (squares: Array<string | null>, currentClass: string) => {   
       return winningCombinations.some(combination => {
         return combination.every(index => {
-          return squares[index] === currentClass();
+          return squares[index] === currentClass;
         });
       });
-    }
+    };
     
-
     const isDraw = () => {
       return squares.every(square => square !== null);
     };
@@ -59,6 +58,10 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Tic Tac Toe</h1>
         {winner ? <div>Le gagnant est {winner}</div> : null}
+        {isDraw() && !winner ? <div>Match nul</div> : null}
+        <div className="reset mb-4 mt-4">
+          <button className='btn-primary btn' onClick={() => {setSquares(Array(9).fill(null)); setWinner(null); }}>Reset</button>
+        </div>
         <div className="game">
           <div className="container game-board">
             <div className="row">
