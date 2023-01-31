@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Confetti from 'react-confetti'
+
 
 function App() {
     const [xIsNext, setXisNext] = useState(true);
@@ -19,6 +21,8 @@ function App() {
       if(squares[index] !== null || winner !== null) {
         return;
       }
+
+
 
       const newSquares = squares.slice();
       newSquares[index] = currentClass();
@@ -57,6 +61,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="App-title">Tic Tac Toe</h1>
+        {winner ? 
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+        />
+        : null}
+        {!winner && !isDraw() ? 
+        <div className="mb-4 mt-4">Prochain joueur : {currentClass()}</div>
+        : null}
         {winner ? <div>Le gagnant est {winner}</div> : null}
         {isDraw() && !winner ? <div>Match nul</div> : null}
         <div className="reset mb-4 mt-4">
