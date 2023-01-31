@@ -3,26 +3,19 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Confetti from 'react-confetti'
 
-
 function App() {
     const [xIsNext, setXisNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [winner, setWinner] = useState<null | string>(null);
     
     const currentClass = () => {
-      if(xIsNext) {
-        return 'O';
-      } else {
-        return 'X';
-      }
+      return xIsNext ? 'X' : 'O';
     };
 
     const handleClick = (index: number) => {
       if(squares[index] !== null || winner !== null) {
         return;
       }
-
-
 
       const newSquares = squares.slice();
       newSquares[index] = currentClass();
