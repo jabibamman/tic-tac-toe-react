@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
     const [xIsNext, setXisNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
+    const [winner, setWinner] = useState<null | string>(null);
     
     const currentClass = () => {
       if(xIsNext) {
@@ -15,10 +16,18 @@ function App() {
     };
 
     const handleClick = (index: number) => {
+      if(squares[index] !== null) {
+        return;
+      }
+
       const newSquares = squares.slice();
       newSquares[index] = currentClass();
       setSquares(newSquares);
       setXisNext(!xIsNext);
+
+      if(checkWin(currentClass)) {
+        setWinner(currentClass);
+      }
     };
 
     const winningCombinations = [
@@ -32,13 +41,14 @@ function App() {
       [2, 4, 6]
     ];
 
-    const checkWin = (currentClass: () => string) => {
+    const checkWin = (currentClass: () => string) => {      
       return winningCombinations.some(combination => {
         return combination.every(index => {
-          return squares[index].classList.contains(currentClass());
+          return squares[index] === currentClass();
         });
       });
     }
+    
 
     const isDraw = () => {
       return squares.every(square => square !== null);
@@ -48,6 +58,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="App-title">Tic Tac Toe</h1>
+        {winner ? <div>Le gagnant est {winner}</div> : null}
         <div className="game">
           <div className="container game-board">
             <div className="row">
