@@ -24,8 +24,8 @@
 }
 
 .square {
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   background-color: #282c34;
   border: 1px solid #282c34;
   border-radius: 5px;

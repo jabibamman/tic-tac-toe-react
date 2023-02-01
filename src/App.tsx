@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Confetti from 'react-confetti'
+import { Button, Container, Grid } from '@mui/material';
+
 
 function App() {
     const [xIsNext, setXisNext] = useState(true);
@@ -109,28 +110,48 @@ function App() {
               </>
             ) : null}
           </div>
-          <div className="reset mb-4 mt-4">
-            <button className='btn-primary btn' onClick={() => {
+          <Grid container spacing={2} justifyContent="center" mb={4}>
+             <Button className="btn" onClick={() => {
               setSquares(Array(9).fill(null)); 
-              setWinner(null); }}>Nouvelle Partie</button>
-          </div>
-          <div className="game">
-            <div className="container game-board">
-              <div className="row">
-              {Array.from(Array(9).keys()).map((i) => (
-                <div className="col-4" key={i}>
-                  <button 
-                    className="square"
-                    key={i} onClick={() => handleClick(i)} >
-                      <span style={setStyleClass(squares[i])}>
-                        {squares[i]}
-                      </span>
-                  </button>
-                </div>
-              ))}
-              </div>
-            </div>
-          </div>
+              setWinner(null); }}>Nouvelle Partie
+            </Button>
+          </Grid>
+          <Grid container spacing={2}>
+          <Grid container item xs={12} spacing={2}>
+            {Array.from(Array(3).keys()).map((i) => (
+              <Grid item xs={4} key={i}>
+                <Button className="square" variant="contained" color="inherit" onClick={() => handleClick(i)}>
+                  <span style={setStyleClass(squares[i])}>
+                    {squares[i]}
+                  </span>
+                </Button>
+              </Grid>
+            ))}
+          </Grid>
+          <Grid container item xs={12} spacing={2}>
+            {Array.from(Array(3).keys()).map((i) => (
+              <Grid item xs={4} key={i + 3}>
+                <Button className="square" variant="contained" color="inherit" onClick={() => handleClick(i + 3)}>
+                  <span style={setStyleClass(squares[i + 3])}>
+                    {squares[i + 3]}
+                  </span>
+                </Button>
+              </Grid>
+            ))}
+          </Grid>
+          <Grid container item xs={12} spacing={2}>
+            {Array.from(Array(3).keys()).map((i) => (
+              <Grid item xs={4} key={i + 6}>
+                <Button className="square" variant="contained" color="inherit" onClick={() => handleClick(i + 6)}>
+                  <span style={setStyleClass(squares[i + 6])}>
+                    {squares[i + 6]}
+                  </span>
+                </Button>
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+
         </header>
       </div>
     );
