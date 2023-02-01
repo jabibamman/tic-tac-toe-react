@@ -117,7 +117,7 @@ function App() {
             </Button>
           </Grid>
           <Grid container spacing={1} alignItems="center" flexDirection="column">
-          <Grid container item xs={2} spacing={0}>
+          <Grid container item xs={10} md={4} lg={2} spacing={0}>
             {Array.from(Array(3).keys()).map((i) => (
               <Grid item xs={4} key={i}>
                 <Button className="square" variant="contained" color="inherit" onClick={() => handleClick(i)}>
@@ -128,7 +128,7 @@ function App() {
               </Grid>
             ))}
           </Grid>
-          <Grid container item xs={2} spacing={0}>
+          <Grid container item xs={10} md={4} lg={2} spacing={0}>
             {Array.from(Array(3).keys()).map((i) => (
               <Grid item xs={4} key={i + 3}>
                 <Button className="square" variant="contained" color="inherit" onClick={() => handleClick(i + 3)}>
@@ -139,7 +139,7 @@ function App() {
               </Grid>
             ))}
           </Grid>
-          <Grid container item xs={2} spacing={0}>
+          <Grid container item xs={10} md={4} lg={2} spacing={0}>
             {Array.from(Array(3).keys()).map((i) => (
               <Grid item xs={4} key={i + 6}>
                 <Button className="square" variant="contained" color="inherit" onClick={() => handleClick(i + 6)}>
