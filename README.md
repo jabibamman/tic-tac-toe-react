@@ -1,9 +1,7 @@
 # Tic Tac Toe React
 
 
-
-
-This app of Tic Tac Toe was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
 > Screenshot from the game : 
