@@ -26,12 +26,8 @@
 .square {
   width: 6.25rem;
   height: 6.25rem;
-  background-color: #282c34;
-  border: 1px solid #282c34;
-  border-radius: 5px;
 }
 
 .square:hover {
-  background-color: #61dafb;
   border: 1px solid #61dafb;
 }

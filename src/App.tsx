@@ -120,7 +120,7 @@ function App() {
           <Grid container item xs={10} md={4} lg={2} spacing={0}>
             {Array.from(Array(3).keys()).map((i) => (
               <Grid item xs={4} key={i}>
-                <Button className="square" variant="contained" color="inherit" onClick={() => handleClick(i)}>
+                <Button className="square" variant="outlined" color="inherit" onClick={() => handleClick(i)}>
                   <span style={setStyleClass(squares[i])}>
                     {squares[i]}
                   </span>
@@ -131,7 +131,7 @@ function App() {
           <Grid container item xs={10} md={4} lg={2} spacing={0}>
             {Array.from(Array(3).keys()).map((i) => (
               <Grid item xs={4} key={i + 3}>
-                <Button className="square" variant="contained" color="inherit" onClick={() => handleClick(i + 3)}>
+                <Button className="square" variant="outlined" color="inherit" onClick={() => handleClick(i + 3)}>
                   <span style={setStyleClass(squares[i + 3])}>
                     {squares[i + 3]}
                   </span>
@@ -142,7 +142,7 @@ function App() {
           <Grid container item xs={10} md={4} lg={2} spacing={0}>
             {Array.from(Array(3).keys()).map((i) => (
               <Grid item xs={4} key={i + 6}>
-                <Button className="square" variant="contained" color="inherit" onClick={() => handleClick(i + 6)}>
+                <Button className="square" variant="outlined" color="inherit" onClick={() => handleClick(i + 6)}>
                   <span style={setStyleClass(squares[i + 6])}>
                     {squares[i + 6]}
                   </span>
