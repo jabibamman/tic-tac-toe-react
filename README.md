@@ -9,8 +9,7 @@ This app of Tic Tac Toe was bootstrapped with [Create React App](https://github.
 > Screenshot from the game : 
 <div>
 <img src="https://user-images.githubusercontent.com/61329786/216055048-02750dc7-9c2c-4ff0-9f9a-a150549f5b97.png" height="320px">
- 
- <p>2th screenshot : </p>
+
 <img src="https://user-images.githubusercontent.com/61329786/216055121-5e1f80d9-71d9-487a-a645-747ba9fd3faa.png" height="320px">
 </div>
 
