@@ -93,10 +93,10 @@ function App() {
     }
     
   return (
-    <div className="App">
+    <Grid className="App">
         <header className="App-header">
           <h1 className="App-title">Tic Tac Toe</h1>
-          <div className="mb-4">
+          <Grid className="mb-4">
               {!isDraw() && !winner ?  (
                   <p className="mb-4">Au tour de {" "}
                     <span style={setStyleClass(currentClass())}>{}
@@ -118,7 +118,7 @@ function App() {
               {confetti()}
               </>
             ) : null}
-          </div>
+          </Grid>
           <Grid container spacing={2} justifyContent="center" mb={4}>
              <Button className="btn" onClick={() => {
               setSquares(Array(9).fill(null)); 
@@ -141,7 +141,7 @@ function App() {
           ))}
         </Grid>
         </header>
-      </div>
+      </Grid>
     );
   }
   
