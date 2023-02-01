@@ -90,8 +90,6 @@ function App() {
         height={window.innerHeight}
         drawShape={draw}
       />
-
-      
     }
     
   return (
@@ -128,39 +126,19 @@ function App() {
             </Button>
           </Grid>
           <Grid container spacing={1} alignItems="center" flexDirection="column">
-          <Grid container item xs={size.xs} md={size.md} lg={size.lg} spacing={0}>
-            {Array.from(Array(3).keys()).map((i) => (
-              <Grid item xs={4} key={i}>
-                <Button className="square" variant="outlined" color="inherit" onClick={() => handleClick(i)}>
-                  <span style={setStyleClass(squares[i])}>
-                    {squares[i]}
-                  </span>
-                </Button>
-              </Grid>
-            ))}
-          </Grid>
-          <Grid container item xs={size.xs} md={size.md} lg={size.lg} spacing={0}>
-            {Array.from(Array(3).keys()).map((i) => (
-              <Grid item xs={4} key={i + 3}>
-                <Button className="square" variant="outlined" color="inherit" onClick={() => handleClick(i + 3)}>
-                  <span style={setStyleClass(squares[i + 3])}>
-                    {squares[i + 3]}
-                  </span>
-                </Button>
-              </Grid>
-            ))}
-          </Grid>
-          <Grid container item xs={size.xs} md={size.md} lg={size.lg} spacing={0}>
-            {Array.from(Array(3).keys()).map((i) => (
-              <Grid item xs={4} key={i + 6}>
-                <Button className="square" variant="outlined" color="inherit" onClick={() => handleClick(i + 6)}>
-                  <span style={setStyleClass(squares[i + 6])}>
-                    {squares[i + 6]}
-                  </span>
-                </Button>
-              </Grid>
-            ))}
-          </Grid>
+          {Array.from(Array(3).keys()).map((i) => (
+            <Grid container item xs={size.xs} md={size.md} lg={size.lg} spacing={0} key={i}>
+              {Array.from(Array(3).keys()).map((j) => (
+                <Grid item xs={4} key={j}>
+                  <Button className="square" variant="outlined" color="inherit" onClick={() => handleClick(i * 3 + j)}>
+                    <span style={setStyleClass(squares[i * 3 + j])}>
+                      {squares[i * 3 + j]}
+                    </span>
+                  </Button>
+                </Grid>
+              ))}
+            </Grid>
+          ))}
         </Grid>
         </header>
       </div>
