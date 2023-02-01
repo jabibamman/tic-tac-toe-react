@@ -8,6 +8,9 @@ function App() {
     const [xIsNext, setXisNext] = useState(true);
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [winner, setWinner] = useState<null | string>(null);
+    const xs:number = 10;
+    const md:number = 4;
+    const lg:number = 3;
     
     const setStyleClass = (currentClass: string) => {
       return {
@@ -83,6 +86,8 @@ function App() {
       
     }
     
+
+    
   return (
     <div className="App">
         <header className="App-header">
@@ -117,7 +122,7 @@ function App() {
             </Button>
           </Grid>
           <Grid container spacing={1} alignItems="center" flexDirection="column">
-          <Grid container item xs={10} md={4} lg={2} spacing={0}>
+          <Grid container item xs={xs} md={md} lg={lg} spacing={0}>
             {Array.from(Array(3).keys()).map((i) => (
               <Grid item xs={4} key={i}>
                 <Button className="square" variant="outlined" color="inherit" onClick={() => handleClick(i)}>
@@ -128,7 +133,7 @@ function App() {
               </Grid>
             ))}
           </Grid>
-          <Grid container item xs={10} md={4} lg={2} spacing={0}>
+          <Grid container item xs={xs} md={md} lg={lg} spacing={0}>
             {Array.from(Array(3).keys()).map((i) => (
               <Grid item xs={4} key={i + 3}>
                 <Button className="square" variant="outlined" color="inherit" onClick={() => handleClick(i + 3)}>
@@ -139,7 +144,7 @@ function App() {
               </Grid>
             ))}
           </Grid>
-          <Grid container item xs={10} md={4} lg={2} spacing={0}>
+          <Grid container item xs={xs} md={md} lg={lg} spacing={0}>
             {Array.from(Array(3).keys()).map((i) => (
               <Grid item xs={4} key={i + 6}>
                 <Button className="square" variant="outlined" color="inherit" onClick={() => handleClick(i + 6)}>
