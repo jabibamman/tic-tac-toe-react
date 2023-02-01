@@ -1,10 +1,15 @@
 # Tic Tac Toe React
 
-![image](https://user-images.githubusercontent.com/61329786/216055048-02750dc7-9c2c-4ff0-9f9a-a150549f5b97.png)
-![image](https://user-images.githubusercontent.com/61329786/216055121-5e1f80d9-71d9-487a-a645-747ba9fd3faa.png)
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This app of Tic Tac Toe was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+<img src="https://user-images.githubusercontent.com/61329786/216055048-02750dc7-9c2c-4ff0-9f9a-a150549f5b97.png" height="320px">
+<img src="https://user-images.githubusercontent.com/61329786/216055121-5e1f80d9-71d9-487a-a645-747ba9fd3faa.png" height="320px">
+
+
 
 ## Installation
 
